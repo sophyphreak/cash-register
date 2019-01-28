@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Col, Input, Label, Row } from 'reactstrap';
 import { isValidPrice } from 'dao-of-validation';
-import { rowStyle, pStyle } from './mainStyle';
+import { rowStyle } from './mainStyle';
 import initializeState from './helpers/initializeState';
 import getClearState from './helpers/getClearState';
 import { checkCashRegister } from '../checkCashRegister/checkCashRegister';
@@ -138,7 +138,7 @@ class Main extends Component {
           <Col sm={{ size: 1 }} xs="4">
             <Label>Nickles:</Label>
             <Input
-              name="nickles"
+              name="nickels"
               value={this.state.cashInDrawer.nickels}
               onChange={this.handleCashInDrawerChange}
             />
@@ -155,7 +155,7 @@ class Main extends Component {
         <br />
         <br />
         <Row>
-          <Col sm={{ size: 2, offset: 3 }} xs="6">
+          <Col sm={{ size: 6, offset: 3 }} xs="6">
             <Label>
               <h4>Status: {this.state.status}</h4>
             </Label>

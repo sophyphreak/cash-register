@@ -92,22 +92,29 @@ const moveDrawerToChange = (changeRequired, cashInDrawer) => {
       break;
     }
   }
+  console.log(cashInDrawer);
   if (changeRequired - changeAmount > 0) {
     return 'INSUFFICIENT_FUNDS';
   } else if (
-    cashInDrawer.pennies === 0 &&
-    cashInDrawer.nickels === 0 &&
-    cashInDrawer.dimes === 0 &&
-    cashInDrawer.quarters === 0 &&
-    cashInDrawer.ones === 0 &&
-    cashInDrawer.fives === 0 &&
-    cashInDrawer.tens === 0 &&
-    cashInDrawer.twenties === 0 &&
-    cashInDrawer.oneHundreds === 0
+    !cashInDrawer.pennies &&
+    !cashInDrawer.nickels &&
+    !cashInDrawer.dimes &&
+    !cashInDrawer.quarters &&
+    !cashInDrawer.ones &&
+    !cashInDrawer.fives &&
+    !cashInDrawer.tens &&
+    !cashInDrawer.twenties &&
+    !cashInDrawer.oneHundreds
   ) {
-    return 'CLOSED';
+    return {
+      status: 'CLOSED',
+      change: changeObject
+    };
   } else {
-    return changeObject;
+    return {
+      status: 'OPEN',
+      change: changeObject
+    };
   }
 };
 
