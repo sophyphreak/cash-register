@@ -50,6 +50,7 @@ class Main extends Component {
     this.setState(state);
   }
   render() {
+    const { cashInDrawer, change } = this.state;
     return (
       <div>
         <Row style={rowStyle}>
@@ -86,6 +87,9 @@ class Main extends Component {
               value={this.state.cashInDrawer.oneHundreds}
               onChange={this.handleCashInDrawerChange}
             />
+            <Label>
+              {cashInDrawer.oneHundreds && '$' + cashInDrawer.oneHundreds * 100}
+            </Label>
           </Col>
           <Col sm={{ size: 1 }} xs="4">
             <Label>Twenty Dollar Bills:</Label>
@@ -94,6 +98,9 @@ class Main extends Component {
               value={this.state.cashInDrawer.twenties}
               onChange={this.handleCashInDrawerChange}
             />
+            <Label>
+              {cashInDrawer.twenties && '$' + cashInDrawer.twenties * 20}
+            </Label>
           </Col>
           <Col sm={{ size: 1 }} xs="4">
             <Label>Ten Dollar Bills:</Label>
@@ -102,6 +109,7 @@ class Main extends Component {
               value={this.state.cashInDrawer.tens}
               onChange={this.handleCashInDrawerChange}
             />
+            <Label>{cashInDrawer.tens && '$' + cashInDrawer.tens * 10}</Label>
           </Col>
           <Col sm={{ size: 1 }} xs="4">
             <Label>Five Dollar Bills:</Label>
@@ -110,6 +118,7 @@ class Main extends Component {
               value={this.state.cashInDrawer.fives}
               onChange={this.handleCashInDrawerChange}
             />
+            <Label>{cashInDrawer.fives && '$' + cashInDrawer.fives * 5}</Label>
           </Col>
           <Col sm={{ size: 1 }} xs="4">
             <Label>One Dollar Bills:</Label>
@@ -118,6 +127,7 @@ class Main extends Component {
               value={this.state.cashInDrawer.ones}
               onChange={this.handleCashInDrawerChange}
             />
+            <Label>{cashInDrawer.ones && '$' + cashInDrawer.ones}</Label>
           </Col>
           <Col sm={{ size: 1 }} xs="4">
             <Label>Quarters:</Label>
@@ -126,6 +136,9 @@ class Main extends Component {
               value={this.state.cashInDrawer.quarters}
               onChange={this.handleCashInDrawerChange}
             />
+            <Label>
+              {cashInDrawer.quarters && '$' + cashInDrawer.quarters * 0.25}
+            </Label>
           </Col>
           <Col sm={{ size: 1 }} xs="4">
             <Label>Dimes:</Label>
@@ -134,6 +147,9 @@ class Main extends Component {
               value={this.state.cashInDrawer.dimes}
               onChange={this.handleCashInDrawerChange}
             />
+            <Label>
+              {cashInDrawer.dimes && '$' + cashInDrawer.dimes * 0.1}
+            </Label>
           </Col>
           <Col sm={{ size: 1 }} xs="4">
             <Label>Nickles:</Label>
@@ -142,6 +158,9 @@ class Main extends Component {
               value={this.state.cashInDrawer.nickels}
               onChange={this.handleCashInDrawerChange}
             />
+            <Label>
+              {cashInDrawer.nickels && '$' + cashInDrawer.nickels * 0.05}
+            </Label>
           </Col>
           <Col sm={{ size: 1 }} xs="4">
             <Label>Pennies:</Label>
@@ -150,6 +169,9 @@ class Main extends Component {
               value={this.state.cashInDrawer.pennies}
               onChange={this.handleCashInDrawerChange}
             />
+            <Label>
+              {cashInDrawer.pennies && '$' + cashInDrawer.pennies * 0.01}
+            </Label>
           </Col>
         </Row>
         <br />
@@ -177,6 +199,10 @@ class Main extends Component {
             <Label>
               <h4>{this.state.change.oneHundreds}</h4>
             </Label>
+            <br />
+            <Label>
+              {!!change.oneHundreds && '$' + change.oneHundreds * 100}
+            </Label>
           </Col>
           <Col sm={{ size: 1 }} xs="4">
             <Label>Twenty Dollar Bills:</Label>
@@ -185,6 +211,8 @@ class Main extends Component {
             <Label>
               <h4>{this.state.change.twenties}</h4>
             </Label>
+            <br />
+            <Label>{!!change.twenties && '$' + change.twenties * 20}</Label>
           </Col>
           <Col sm={{ size: 1 }} xs="4">
             <Label>Ten Dollar Bills:</Label>
@@ -193,6 +221,8 @@ class Main extends Component {
             <Label>
               <h4>{this.state.change.tens}</h4>
             </Label>
+            <br />
+            <Label>{!!change.tens && '$' + change.tens * 10}</Label>
           </Col>
           <Col sm={{ size: 1 }} xs="4">
             <Label>Five Dollar Bills:</Label>
@@ -201,6 +231,8 @@ class Main extends Component {
             <Label>
               <h4>{this.state.change.fives}</h4>
             </Label>
+            <br />
+            <Label>{!!change.fives && '$' + change.fives * 5}</Label>
           </Col>
           <Col sm={{ size: 1 }} xs="4">
             <Label>One Dollar Bills:</Label>
@@ -209,6 +241,8 @@ class Main extends Component {
             <Label>
               <h4>{this.state.change.ones}</h4>
             </Label>
+            <br />
+            <Label>{!!change.ones && '$' + change.ones}</Label>
           </Col>
           <Col sm={{ size: 1 }} xs="4">
             <Label>Quarters:</Label>
@@ -216,6 +250,8 @@ class Main extends Component {
             <Label>
               <h4>{this.state.change.quarters}</h4>
             </Label>
+            <br />
+            <Label>{!!change.quarters && '$' + change.quarters * 0.25}</Label>
           </Col>
           <Col sm={{ size: 1 }} xs="4">
             <Label>Dimes:</Label>
@@ -223,6 +259,8 @@ class Main extends Component {
             <Label>
               <h4>{this.state.change.dimes}</h4>
             </Label>
+            <br />
+            <Label>{!!change.dimes && '$' + change.dimes * 0.1}</Label>
           </Col>
           <Col sm={{ size: 1 }} xs="4">
             <Label>Nickels:</Label>
@@ -230,6 +268,8 @@ class Main extends Component {
             <Label>
               <h4>{this.state.change.nickels}</h4>
             </Label>
+            <br />
+            <Label>{!!change.nickels && '$' + change.nickels * 0.05}</Label>
           </Col>
           <Col sm={{ size: 1 }} xs="4">
             <Label>Pennies:</Label>
@@ -237,6 +277,8 @@ class Main extends Component {
             <Label>
               <h4>{this.state.change.pennies}</h4>
             </Label>
+            <br />
+            <Label>{!!change.pennies && '$' + change.pennies * 0.01}</Label>
           </Col>
         </Row>
         <br />
